@@ -1,36 +1,87 @@
 <template>
-  <q-page class="bg-purple-8 fullscreen">
-    <img class="q-pa-md" src="../assets/Nubank.png">
-    <div class="div-nubank-main column bg-white absolute-center">
-       <p class="text-h6 text-center q-mb-xl">Faça seu login</p> 
-        <form class="q-pa-sm q-mt-md column" style="width: 316px; heigth: 400px;">
-        <q-input label="Cpf"/>
-        <q-input label="Senha"/>
-
-        <q-btn class="q-mt-md q-pa-md" outline style="color: #8b10ae;" label="CONTINUAR" />
-        </form>
+<q-page class="bg-purple-8  fullscreen">
+    <img class="img-nubank q-pa-lg" style="width: 30%; max-width: 120px;" src="../assets/Nubank.png">
+    <div class="main-div absolute-center rounded-borders column q-mt-md bg-white items-center justify-center" style="height: 90%; width: 90%; max-width: 450px;">
+        <div class="col-2 column bg-white q-pa-xl items-center">
+            <p class="text-h6 text-center">Faça seu login</p>
+        </div>
+        <div class="col-8 column q-pa-xl items-center" style="width: 100%;">
+            <form style="width: 100%;" class="">
+                <q-input :rules="[val => val.length > 13 || 'Informe o valor correto']"  mask="###.###.###-##" v-model="input1" label="Cpf" />
+                <q-input v-model="input2" :type="isPwd ? 'text' : 'password'"  label="Senha">
+                    <template v-slot:append>
+                        <q-icon :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer" @click="isPwd = !isPwd" />
+                    </template>
+                </q-input>
+            </form>
+            <q-btn
+              class="q-mt-xl q-pa-md"
+              outline
+              :style="input1 !== '' && input2 !== ''  ? 'color: #8b10ae; width: 100%;' : 'color: #333; width: 100%;'"
+              :disable="input1 !== '' && input2 !== ''  ? false : true"
+              label="CONTINUAR" />
+        </div>
+        <div class="col-2 column q-pb-sm justify-evently text-center" style="width: 100%;">
+            <a
+            @mouseover="hoverAone = true"
+            @mouseleave="hoverAone = false"
+            :style="hoverAone == true ? 'text-decoration: none; color: #333;' : 'text-decoration: none; color: #8b10ae;'"
+            class="text-bold text-subtitle2"
+            href=""
+            >
+                Esqueci minha senha >
+            </a>
+            <a
+            @mouseover="hoverAtwo = true"
+            @mouseleave="hoverAtwo = false"
+            :style="hoverAtwo == true ? 'text-decoration: none; color: #333;' : 'text-decoration: none; color: #8b10ae;'"
+            class="text-bold text-subtitle2"
+            href="">
+                Ainda não sou cliente >
+            </a>
+        </div>
     </div>
-  </q-page>
+</q-page>
 </template>
 
 <script>
 export default {
-  name: 'EcoDashboard',
-  data () {
-    text: true
-  }
+    data() {
+        return {
+            input1: '',
+            input2: '',
+            value: '',
+            hoverAone: false,
+            hoverAtwo: false,
+            isPwd: false
+        }
+    },
+    methods: {
+      inputFormat (input1) {
+        this.input1.mask('000.000.000-00');
+
+        return this.input1;
+      }
+    }
 }
 </script>
 
-<style>
-  .div-nubank-main {
-    width: 450px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    box-shadow: 1px;
-  }
+<style lang="scss">
+@media screen and (max-width: 475px) {
+    .img-nubank {
+        width: 40%;
+    }
+
+    .main-div {
+        div:nth-child(2) {
+            padding: 15px;
+            height: auto;
+        }
+
+        div:nth-child(3) {
+            padding: 15px;
+        }
+
+    }
+}
 </style>
