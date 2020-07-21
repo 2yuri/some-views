@@ -1,7 +1,7 @@
 <template>
 <q-page class="bg-purple-8  fullscreen">
     <a href="/" class="absolute-top-right q-pa-md">
-      <q-icon style="color: #fff; font-size: 1.5rem" name="reply" />
+      <q-icon style="color: black; font-size: 1.5rem" name="reply" />
     </a>
     <img class="img-nubank q-pa-lg" style="width: 30%; max-width: 120px;" src="../assets/Nubank.png">
     <div class="main-div absolute-center rounded-borders column q-mt-md bg-white items-center justify-center" style="height: 90%; width: 90%; max-width: 450px;">
