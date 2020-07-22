@@ -1,15 +1,15 @@
 <template>
 <q-page class="bg-white fullscreen">
-    <a href="/" class="absolute-top-left q-ma-xl">
+    <!-- <a href="/" class="absolute-top-left q-ma-xl">
       <q-icon style="color: #000; font-size: 1.5rem" name="reply" />
-    </a>
+    </a> -->
     <q-header class="bg-white">
         <q-toolbar>
             <q-toolbar-title class="row text-subtitle1 items-center justify-end text-right text-grey">
                 <a href="https://mail.google.com/mail/u/0/?tab=wm&ogbl">Gmail</a>
                 <a href="https://www.google.com.br/imghp?hl=pt-BR&tab=wi&ogbl">Imagens</a>
-                <q-icon class="q-mr-md" name="view_list" style="font-size: 30px" />
-                <img style="border-radius: 50%;" src="https://api.adorable.io/avatars/32/abott@adorable.png" alt="quasar">
+                <dropdownWidgets />
+                <dropdown></dropdown>
             </q-toolbar-title>
         </q-toolbar>
     </q-header>
@@ -65,7 +65,8 @@
 export default {
     data() {
         return {
-            text: ''
+            text: '',
+            dropdown: false
         }
     },
     methods: {
@@ -77,6 +78,10 @@ export default {
             console.log(value);
             return window.location.href = `https://www.google.com/search?source=hp&ei=m00XX9zUO6bA5OUPyvieSA&q=${value}`
         }
+    },
+    components: {
+      dropdown: require('components/DropdownAccount.vue').default,
+      dropdownWidgets: require('components/DropdownWidgets.vue').default
     }
 }
 </script>
