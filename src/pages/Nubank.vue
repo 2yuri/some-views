@@ -10,7 +10,7 @@
         </div>
         <div class="col-8 column q-pa-xl items-center" style="width: 100%;">
             <form style="width: 100%;" class="">
-                <q-input :rules="[val => val.length > 13 || 'Informe o valor correto']"  mask="###.###.###-##" v-model="input1" label="Cpf" />
+                <q-input autofocus :rules="[val => val.length > 13 || 'Informe o valor correto']"  mask="###.###.###-##" v-model="input1" label="Cpf" />
                 <q-input v-model="input2" :type="isPwd ? 'text' : 'password'"  label="Senha">
                     <template v-slot:append>
                         <q-icon :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer" @click="isPwd = !isPwd" />
