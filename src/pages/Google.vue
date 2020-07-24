@@ -1,8 +1,8 @@
 <template>
 <q-page class="bg-white fullscreen">
-    <!-- <a href="/" class="absolute-top-left q-ma-xl">
+    <a href="/" class="absolute-top-left q-ma-xl">
       <q-icon style="color: #000; font-size: 1.5rem" name="reply" />
-    </a> -->
+    </a>
     <q-header class="bg-white">
         <q-toolbar>
             <q-toolbar-title class="row text-subtitle1 items-center justify-end text-right text-grey">

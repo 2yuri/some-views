@@ -17,7 +17,7 @@
                             <q-avatar>
                                 <q-icon class="cursor-pointer" @click="window.location.reload()" name="search" />
                             </q-avatar>
-                        </template>
+                        </template> 
                     </q-input>
                     <q-icon name="notifications_none" />
                     <div class="row items-center justify-end" style="width: 40%">
