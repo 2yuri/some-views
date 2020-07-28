@@ -4,8 +4,8 @@
 
   <div class="column q-pa-sm bg-grey-1 fullscreen" style="margin-top: 72px;">
 
-    <div class="row" style="height: 420px">
-      <div class="column items-start" style="width: 30%">
+    <div class="row justify-evently" style="height: 420px">
+      <div class="column items-center" style="width: 29%">
         <div>
           <q-card class="card-dashboard my-card q-ma-sm">
             <q-card-section class="column bg-white text-black">
