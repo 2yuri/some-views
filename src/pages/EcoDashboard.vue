@@ -1,10 +1,10 @@
 <template>
-<q-page class="bg-grey-1 fullscreen">
+<q-page class="bg-grey-1 fullscreen overflow-auto	">
   <headerDash />
 
-  <div class="column q-pa-sm bg-grey-1 fullscreen" style="margin-top: 72px;">
+  <div class="column q-pa-sm bg-grey-1" style="margin-top: 72px;">
 
-    <div class="row justify-evently" style="height: 420px">
+    <div class="q-ma-sm row justify-evently" style="height: 420px">
       <div class="column items-center" style="width: 29%">
         <div>
           <q-card class="card-dashboard my-card q-ma-sm">
@@ -52,9 +52,13 @@
       </div>
     </div>
 
-    <div class="row">
-      <div>info 1</div>
-      <div>info 2</div>
+    <div class="q-ma-sm q-mt-md row justify-between" style="height: 400px">
+      <div class="row q-pa-md bg-white rounded-borders	shadow-1	" style="width: 50%">
+        INFO 1 HERE
+      </div>
+      <div class="row q-pa-md bg-white rounded-borders shadow-1	" style="width: 49%">
+        INFO 2 HERE
+      </div>
     </div>
   </div>
 </q-page>
@@ -80,7 +84,8 @@ a {
   width: 320px;
   height: 120px;
 }
-.card-dashboard p{
+
+.card-dashboard p {
   margin: 0
 }
 </style>
