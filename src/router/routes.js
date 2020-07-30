@@ -8,7 +8,6 @@ const routes = [
       { path: '/Nubank', component: () => import('pages/Nubank.vue') },
       { path: '/Google', component: () => import('pages/Google.vue') },
       { path: '/Dashboard', component: () => import('pages/EcoDashboard.vue') },
-
     ]
   },
 
