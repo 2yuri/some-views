@@ -52,12 +52,68 @@
       </div>
     </div>
 
-    <div class="q-ma-sm q-mt-md row justify-between" style="height: 400px">
-      <div class="row q-pa-md bg-white rounded-borders	shadow-1	" style="width: 50%">
-        INFO 1 HERE
+    <div class="q-ma-sm q-mt-md q-mb-lg row justify-between" style="height: 400px">
+      <div class="row q-pa-md bg-white rounded-borders	shadow-1" style="width: 50%">
+
+        <q-timeline color="secondary">
+
+          <q-timeline-entry color="purple">
+            <template v-slot:title>
+              <div class="row items-center" style="height: 20px; width: 100%">
+                <q-badge style="height: 15px" class="shadow-1" color="yellow-8">
+                  HOTFIX
+                </q-badge>
+                <p class="text-subtitle2 q-ma-none q-ml-md"> Versão v1.490.01</p>
+              </div>
+            </template>
+
+            <div>
+
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <q-timeline color="purple-8">
+                <q-timeline-entry>
+                  Lorem ipsum dolor sit amet
+                </q-timeline-entry>
+                <q-timeline-entry>
+                  Lorem ipsum dolor sit amet
+                </q-timeline-entry>
+                <q-timeline-entry>
+                  Lorem ipsum dolor sit amet
+                </q-timeline-entry>
+              </q-timeline>
+
+            </div>
+          </q-timeline-entry>
+
+          <q-timeline-entry color="purple">
+            <template v-slot:title>
+              <div class="row items-center" style="height: 20px; width: 100%">
+                <q-badge style="height: 15px" class="shadow-1" color="blue-8">
+                  PRINCIPAL
+                </q-badge>
+                <p class="text-subtitle2 q-ma-none q-ml-md"> Versão v1.490.01</p>
+              </div>
+            </template>
+
+          </q-timeline-entry>
+
+        </q-timeline>
       </div>
-      <div class="row q-pa-md bg-white rounded-borders shadow-1	" style="width: 49%">
-        INFO 2 HERE
+      <div class="column q-pa-md bg-white justify-center rounded-borders shadow-1	" style="width: 49%">
+        <div class="row justify-between">
+          <p class="text-subtitle2">Terminais por versão</p>
+          <q-icon class="cursor-pointer" name="refresh" />
+        </div>
+
+        <!-- <div class="row items-center q-pa-sm" style="width: 100%">
+          <p  style="width: 10%;" class="q-ma-none">1.490.01</p>
+          <div style="width: 10%; height: 40px; background-color: #3CB371"></div>
+        </div>
+        <div class="row items-center q-pa-sm" style="width: 100%">
+          <p style="width: 10%;" class="q-ma-none">1.490.01</p>
+          <div style="width: 90%; height: 40px; background-color: #3CB371"></div>
+        </div> -->
+        <chartDash />
       </div>
     </div>
   </div>
@@ -69,9 +125,9 @@ export default {
   name: 'EcoDashboard',
   components: {
     headerDash: require('../components/DashboardHeader.vue').default,
+    chartDash: require('../components/DashboardChart.vue').default,
     tableDash: require('../components/TablePagination.vue').default
   }
-
 }
 </script>
 
