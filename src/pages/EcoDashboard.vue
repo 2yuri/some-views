@@ -102,18 +102,9 @@
       <div class="column q-pa-md bg-white justify-center rounded-borders shadow-1	" style="width: 49%">
         <div class="row justify-between">
           <p class="text-subtitle2">Terminais por versão</p>
-          <q-icon class="cursor-pointer" name="refresh" />
+          <q-icon @click="forceRerender" class="cursor-pointer" name="refresh" />
         </div>
-
-        <!-- <div class="row items-center q-pa-sm" style="width: 100%">
-          <p  style="width: 10%;" class="q-ma-none">1.490.01</p>
-          <div style="width: 10%; height: 40px; background-color: #3CB371"></div>
-        </div>
-        <div class="row items-center q-pa-sm" style="width: 100%">
-          <p style="width: 10%;" class="q-ma-none">1.490.01</p>
-          <div style="width: 90%; height: 40px; background-color: #3CB371"></div>
-        </div> -->
-        <chartDash />
+        <chartDash :key="componentKey" />
       </div>
     </div>
   </div>
@@ -123,10 +114,20 @@
 <script>
 export default {
   name: 'EcoDashboard',
+  data(){
+    return {
+      componentKey: 0
+    }
+  },
   components: {
     headerDash: require('../components/DashboardHeader.vue').default,
     chartDash: require('../components/DashboardChart.vue').default,
     tableDash: require('../components/TablePagination.vue').default
+  },
+   methods: {
+    forceRerender() {
+      this.componentKey += 1
+    }
   }
 }
 </script>
@@ -143,5 +144,17 @@ a {
 
 .card-dashboard p {
   margin: 0
+}
+
+.q-timeline__dot:before {
+  width: 8px;
+  height: 8px;
+}
+
+.q-timeline__dot:after {
+  width: 1.5px;
+  opacity: 0.7;
+  left: 3px;
+  top: 15px;
 }
 </style>
